@@ -35,9 +35,7 @@ todoFlask/
 │
 ├── app.py
 ├── templates/
-│   └── index.html
-├── static/
-│   └── (optional css/js)
+│   └── base.html
 ├── venv/
 ├── requirements.txt
 └── README.md
