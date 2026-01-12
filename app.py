@@ -22,11 +22,14 @@ def index():
 def add():
     #add new item
     title = request.form.get("title")
-    new_todo = Todo(title=title, complete=False)
-    db.session.add(new_todo)
-    db.session.commit()
-    return redirect(url_for("index"))
-
+    if title:
+        new_todo = Todo(title=title, complete=False)
+        db.session.add(new_todo)
+        db.session.commit()
+        return redirect(url_for("index"))
+    else:
+        return redirect(url_for("index"))
+        
 @app.route("/update/<int:todo_id>")
 def update(todo_id):
     #add new item
